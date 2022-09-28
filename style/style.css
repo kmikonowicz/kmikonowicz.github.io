@@ -31,8 +31,7 @@ body {
   min-height: 1000px;
   font-family: "Secular One", sans-serif;
 }
-
-.bodyHeader {
+body .bodyHeader {
   z-index: 2;
   background-color: var(--foreground-lighter);
   display: flex;
@@ -44,31 +43,31 @@ body {
   top: 0;
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
-.bodyHeader h1 {
+body .bodyHeader h1 {
   /* jeśli podajemy 2 wartości : poz y, poz x */
   margin: 6px 10px;
   /* clamp przyjmuje wartości - najmniejsza możliwa czionka (na ile najmniej
   może się wyświetlić, średnia i największa) */
   font-size: clamp(1.3rem, 2.5vw, 1.8rem);
 }
-.bodyHeader nav #toggler {
+body .bodyHeader nav #toggler {
   display: none;
 }
-.bodyHeader nav #toggler:checked ~ ul {
+body .bodyHeader nav #toggler:checked ~ ul {
   right: 0;
 }
-.bodyHeader nav #toggler:checked ~ label div:nth-child(1) {
+body .bodyHeader nav #toggler:checked ~ label div:nth-child(1) {
   transform: rotate(45deg);
   top: calc(50% - 1px);
 }
-.bodyHeader nav #toggler:checked ~ label div:nth-child(2) {
+body .bodyHeader nav #toggler:checked ~ label div:nth-child(2) {
   opacity: 0;
 }
-.bodyHeader nav #toggler:checked ~ label div:nth-child(3) {
+body .bodyHeader nav #toggler:checked ~ label div:nth-child(3) {
   transform: rotate(-45deg);
   top: calc(50% - 1px);
 }
-.bodyHeader label {
+body .bodyHeader label {
   width: 2rem;
   height: 2rem;
   position: absolute;
@@ -76,23 +75,23 @@ body {
   right: 0;
   margin: 0.15rem;
 }
-.bodyHeader label div {
+body .bodyHeader label div {
   height: 2px;
   width: 80%;
   background-color: #000;
   position: absolute;
   transition: 0.2s;
 }
-.bodyHeader label div:nth-child(1) {
+body .bodyHeader label div:nth-child(1) {
   top: calc(22% - 1px);
 }
-.bodyHeader label div:nth-child(2) {
+body .bodyHeader label div:nth-child(2) {
   top: calc(50% - 1px);
 }
-.bodyHeader label div:nth-child(3) {
+body .bodyHeader label div:nth-child(3) {
   top: calc(78% - 1px);
 }
-.bodyHeader ul {
+body .bodyHeader ul {
   background-color: var(--background-light);
   list-style-type: none;
   margin: 0;
@@ -105,38 +104,36 @@ body {
   transition: 0.5s;
   flex-direction: column;
 }
-.bodyHeader ul li {
+body .bodyHeader ul li {
   top: 0;
   left: 0;
   margin: 0.3rem;
 }
-
-.wrapper {
+body .wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 3.5rem 0.5rem 0 0.5rem;
 }
-.wrapper header {
+body .wrapper header {
   width: 100%;
 }
-.wrapper h2 {
+body .wrapper h2 {
   margin: 0;
 }
-
-.content p {
+body .wrapper .content p {
   margin: 0;
   margin-bottom: 1rem;
   line-height: 1.2rem;
 }
-.content img {
+body .wrapper .content img {
   max-width: 100%;
 }
-.content .tableWrapper {
+body .wrapper .content .tableWrapper {
   /* dajemy padding tylko z prawej i lewej strony */
   padding: 0 1rem;
 }
-.content .tableWrapper table {
+body .wrapper .content .tableWrapper table {
   /* box shadow ze strony https://getcssscan.com/css-box-shadow-examples*/
   box-shadow: var(--default-box-shadow);
   /* max szerokość strony */
@@ -144,22 +141,22 @@ body {
   /* usuwamy granice pomiędzy wierszami i kolumnami */
   border-collapse: collapse;
 }
-.content .tableWrapper table tr {
+body .wrapper .content .tableWrapper table tr {
   background: var(--foreground-light);
   /* even|odd - co drugie dziecko */
 }
-.content .tableWrapper table tr:nth-child(even) {
+body .wrapper .content .tableWrapper table tr:nth-child(even) {
   background: var(--foreground-lighter);
 }
-.content .tableWrapper table tr th {
+body .wrapper .content .tableWrapper table tr th {
   /* ustawiamy kolor ze zmiennych */
   background-color: var(--foreground-dark);
   padding: 0.5rem;
 }
-.content .tableWrapper table tr td {
+body .wrapper .content .tableWrapper table tr td {
   padding: 0.3rem;
 }
-.content form {
+body .wrapper .content form {
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -169,41 +166,42 @@ body {
   box-shadow: var(--default-box-shadow);
   border-radius: 0.5rem;
 }
-.content form input, .content form textarea {
+body .wrapper .content form input, body .wrapper .content form textarea {
   padding: 10px;
 }
-.content .projects {
+body .wrapper .content .projects {
   border: 2px dashed red;
 }
-.content .projects .projectsWrapper {
+body .wrapper .content .projects .projectsWrapper {
   border: 1px dashed blue;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: 0;
 }
-.content .projects .projectsWrapper .project {
+body .wrapper .content .projects .projectsWrapper .project {
   cursor: pointer;
   border: 5px dashed green;
   position: relative;
   aspect-ratio: 1/1;
   width: 30%;
+  max-width: 7rem;
   border-radius: 0 0 1.4rem 1.4rem;
   margin: 0.3rem;
 }
-.content .projects .projectsWrapper .project header {
+body .wrapper .content .projects .projectsWrapper .project header {
   background-color: #d0ced5;
   position: relative;
   z-index: 1;
 }
-.content .projects .projectsWrapper .project header h3 {
+body .wrapper .content .projects .projectsWrapper .project header h3 {
   margin: 0;
 }
-.content .projects .projectsWrapper .project header p {
+body .wrapper .content .projects .projectsWrapper .project header p {
   opacity: 0;
   display: none;
 }
-.content .projects .projectsWrapper .project img {
+body .wrapper .content .projects .projectsWrapper .project img {
   border-radius: 1.2rem;
   position: absolute;
   left: 0;
@@ -211,23 +209,46 @@ body {
   width: 100%;
   height: 100%;
 }
-.content .projects .display {
+body .wrapper .content .projects .display {
   border: 5px dashed green;
 }
-.content .projects .display ul {
+body .wrapper .content .projects .display ul {
   display: flex;
   justify-content: space-between;
   margin: 0;
-  border: 4px dashedrgb(0, 49, 128);
+  border: 4px dashed rgb(0, 49, 128);
   -webkit-padding-start: 0;
           padding-inline-start: 0;
 }
-.content .projects .display ul li {
+body .wrapper .content .projects .display ul li {
   list-style-type: none;
   border: 4px dashedrgb(0, 49, 128);
 }
-
-footer {
+body .wrapper .content .projects .display article {
+  border: 4px dashed red;
+  position: relative;
+}
+body .wrapper .content .projects .display article .displayContent {
+  border: 4px dashed blue;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+  text-align: right;
+}
+body .wrapper .content .projects .display article .displayContent h3, body .wrapper .content .projects .display article .displayContent p {
+  margin: 0;
+  background-color: white;
+  padding: 0.5rem 1.5rem;
+}
+body .wrapper .content .projects .display article img {
+  border: 4px dashed violet;
+  max-height: 40vh;
+}
+body footer {
   margin-top: 3rem;
   background-color: #000;
   color: rgb(255, 255, 255);
@@ -237,12 +258,12 @@ footer {
   align-items: flex-end;
   padding: 1rem;
 }
-footer ol {
+body footer ol {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-footer p {
+body footer p {
   margin: 0;
 }
 
@@ -259,7 +280,7 @@ footer p {
     text-align: justify;
   }
   body .wrapper {
-    min-height: 70vh;
+    min-height: 50vh;
     flex-direction: row;
   }
   body .wrapper:nth-child(odd) {
@@ -268,6 +289,6 @@ footer p {
   body .wrapper > * {
     flex: 1;
     text-align: center;
-    padding: 3rem;
+    padding: 2rem;
   }
 }/*# sourceMappingURL=style.css.map */
