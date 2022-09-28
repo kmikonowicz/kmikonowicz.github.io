@@ -10,5 +10,5 @@ document
     document.querySelector('.display a').href = project.querySelector('a').href
   }
 })
-
+document.querySelector('.project').click()
 // console.log("H3", document.querySelector('.displayContent h3'))
