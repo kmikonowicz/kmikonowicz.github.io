@@ -173,7 +173,7 @@ body .wrapper .content .projects {
   border: 2px dashed red;
 }
 body .wrapper .content .projects .projectsWrapper {
-  border: 1px dashed blue;
+  border: 3px dashed blue;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -181,7 +181,6 @@ body .wrapper .content .projects .projectsWrapper {
 }
 body .wrapper .content .projects .projectsWrapper .project {
   cursor: pointer;
-  border: 5px dashed green;
   position: relative;
   aspect-ratio: 1/1;
   width: 30%;
@@ -211,12 +210,12 @@ body .wrapper .content .projects .projectsWrapper .project img {
 }
 body .wrapper .content .projects .display {
   border: 5px dashed green;
+  background-color: violet;
 }
 body .wrapper .content .projects .display ul {
   display: flex;
   justify-content: space-between;
   margin: 0;
-  border: 4px dashed rgb(0, 49, 128);
   -webkit-padding-start: 0;
           padding-inline-start: 0;
 }
@@ -225,11 +224,9 @@ body .wrapper .content .projects .display ul li {
   border: 4px dashedrgb(0, 49, 128);
 }
 body .wrapper .content .projects .display article {
-  border: 4px dashed red;
   position: relative;
 }
 body .wrapper .content .projects .display article .displayContent {
-  border: 4px dashed blue;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -245,7 +242,6 @@ body .wrapper .content .projects .display article .displayContent h3, body .wrap
   padding: 0.5rem 1.5rem;
 }
 body .wrapper .content .projects .display article img {
-  border: 4px dashed violet;
   max-height: 40vh;
 }
 body footer {
