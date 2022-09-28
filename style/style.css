@@ -174,7 +174,7 @@ body .wrapper .content .projects .projectsWrapper {
   flex-wrap: wrap;
   justify-content: center;
 }
-body .wrapper .content .projects .projectsWrapper .project {
+body .wrapper .content .projects .project {
   cursor: pointer;
   position: relative;
   aspect-ratio: 1/1;
@@ -183,33 +183,37 @@ body .wrapper .content .projects .projectsWrapper .project {
   border-radius: 0 0 1.4rem 1.4rem;
   margin: 0.3rem;
 }
-body .wrapper .content .projects .projectsWrapper .project header {
+body .wrapper .content .projects .project header {
   background-color: #d0ced5;
   position: relative;
   z-index: 1;
 }
-body .wrapper .content .projects .projectsWrapper .project header h3 {
+body .wrapper .content .projects .project header h3 {
   margin: 0;
+  background-color: aliceblue;
 }
-body .wrapper .content .projects .projectsWrapper .project header p {
+body .wrapper .content .projects .project header p {
   opacity: 0;
   display: none;
 }
-body .wrapper .content .projects .projectsWrapper .project img {
+body .wrapper .content .projects .project img {
   border-radius: 1.2rem;
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
+  box-shadow: 0px 0px 37px 1px rgb(66, 68, 90);
 }
-body .wrapper .content .projects .display {
-  background-color: var(--foreground-lighter);
+body .wrapper .content .display {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 37px 1px rgb(66, 68, 90);
 }
-body .wrapper .content .projects .display ul {
+body .wrapper .content .display ul {
   display: flex;
   justify-content: space-between;
   margin: 0;
@@ -217,13 +221,13 @@ body .wrapper .content .projects .display ul {
   -webkit-padding-start: 0;
           padding-inline-start: 0;
 }
-body .wrapper .content .projects .display ul li {
+body .wrapper .content .display ul li {
   list-style-type: none;
 }
-body .wrapper .content .projects .display article {
+body .wrapper .content .display article {
   position: relative;
 }
-body .wrapper .content .projects .display article .displayContent {
+body .wrapper .content .display article .displayContent {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -233,15 +237,70 @@ body .wrapper .content .projects .display article .displayContent {
   align-items: end;
   text-align: right;
 }
-body .wrapper .content .projects .display article .displayContent h3, body .wrapper .content .projects .display article .displayContent p {
+body .wrapper .content .display article .displayContent h3, body .wrapper .content .display article .displayContent p {
   margin: 0;
-  background-color: #b69bff;
+  background-color: #a280ff;
   padding: 0.5rem 1.5rem;
 }
-body .wrapper .content .projects .display article img {
+body .wrapper .content .display article img {
   max-height: 40vh;
 }
-body footer {
+body .gallery {
+  --g: 8px; /* the gap */
+  --s: 400px; /* the size */
+  display: grid;
+  border-radius: 50%;
+}
+body .gallery > img {
+  grid-area: 1/1;
+  width: var(--s);
+  aspect-ratio: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  transform: translate(var(--_x, 0), var(--_y, 0));
+  cursor: pointer;
+  font-size: 0;
+  z-index: 0;
+  transition: 0.3s, z-index 0s 0.3s;
+}
+body .gallery img:hover {
+  font-size: var(--s);
+  z-index: 1;
+  transition: transform 0.2s, font-size 0.3s 0.2s, z-index 0s;
+}
+body .gallery:hover img {
+  transform: translate(0, 0);
+}
+body .gallery > img:nth-child(1) {
+  -webkit-clip-path: polygon(50% 50%, 0.5em 1.2em, 0 1em, 0 0, 100% 0, 100% 1em, calc(100% - 0.5em) 1.2em);
+          clip-path: polygon(50% 50%, 0.5em 1.2em, 0 1em, 0 0, 100% 0, 100% 1em, calc(100% - 0.5em) 1.2em);
+  --_y: calc(-1*var(--g)) ;
+}
+body .gallery > img:nth-child(2) {
+  -webkit-clip-path: polygon(50% 50%, calc(100% - 1.2em) 0.5em, calc(100% - 1em) 0, 100% 0, 100% 100%, calc(100% - 1em) 100%, calc(100% - 1.2em) calc(100% - 0.5em));
+          clip-path: polygon(50% 50%, calc(100% - 1.2em) 0.5em, calc(100% - 1em) 0, 100% 0, 100% 100%, calc(100% - 1em) 100%, calc(100% - 1.2em) calc(100% - 0.5em));
+  --_x: var(--g) ;
+}
+body .gallery > img:nth-child(3) {
+  -webkit-clip-path: polygon(50% 50%, calc(100% - 0.5em) calc(100% - 1.2em), 100% calc(100% - 1.2em), 100% 100%, 0 100%, 0 calc(100% - 1em), 0.5em calc(100% - 1.2em));
+          clip-path: polygon(50% 50%, calc(100% - 0.5em) calc(100% - 1.2em), 100% calc(100% - 1.2em), 100% 100%, 0 100%, 0 calc(100% - 1em), 0.5em calc(100% - 1.2em));
+  --_y: var(--g) ;
+}
+body .gallery > img:nth-child(4) {
+  -webkit-clip-path: polygon(50% 50%, 1.2em 0.5em, 1em 0, 0 0, 0 100%, 1em 100%, 1.2em calc(100% - 0.5em));
+          clip-path: polygon(50% 50%, 1.2em 0.5em, 1em 0, 0 0, 0 100%, 1em 100%, 1.2em calc(100% - 0.5em));
+  --_x: calc(-1*var(--g)) ;
+}
+body body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  background: #3B8686;
+}
+
+footer {
   margin-top: 3rem;
   background-color: #000;
   color: rgb(255, 255, 255);
@@ -251,12 +310,12 @@ body footer {
   align-items: flex-end;
   padding: 1rem;
 }
-body footer ol {
+footer ol {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-body footer p {
+footer p {
   margin: 0;
 }
 
